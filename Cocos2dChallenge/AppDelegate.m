@@ -9,7 +9,10 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
+
 #import "IntroLayer.h"
+
+#import "MobClick.h"
 
 @implementation MyNavigationController
 
@@ -77,7 +80,7 @@
 	director_.wantsFullScreenLayout = YES;
 	
 	// Display FSP and SPF
-	[director_ setDisplayStats:YES];
+	[director_ setDisplayStats:NO];
 	
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
@@ -123,6 +126,20 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+    
+    //@lock 不自动锁屏
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
+    //umeng统计工具
+    [MobClick startWithAppkey:@"50fdeeae5270156248000101" reportPolicy:REALTIME channelId:nil];
+    
+    //@version update
+    [MobClick checkUpdate:NSLocalizedString(@"new version", nil) cancelButtonTitle:NSLocalizedString(@"skip", nil) otherButtonTitles:NSLocalizedString(@"Appstore", nil) ];
+    [MobClick updateOnlineConfig];
+    
+    //@push
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+
 	
 	return YES;
 }
@@ -171,6 +188,48 @@
 {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
+
+//推送
+//推送通知
+
+//@push
+#pragma mark - push notification
+- (void)pushNotification{
+    //本地通知提示
+    int day = 60*60*24;
+    //int day = 10;
+    int fireTimes[] = {day, day*3, day*7, day*14, day*30};
+    int fireNumber = 5;
+    
+    NSString *push_string[] = {NSLocalizedString(@"Come to challenge your cocos2d skill", nil), NSLocalizedString(@"Beat the hackers", nil), NSLocalizedString(@"Don't let other cocos2d freshman beat you!", nil), NSLocalizedString(@"Improve your cocos2d skills", nil),};
+    int pushNumber = 4;
+    
+    NSDate *itemDate = [NSDate date];
+    
+    for (int i=0; i<fireNumber; i++) {
+        UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+        
+        if (localNotif == nil) {
+            return;
+        }
+        
+        localNotif.fireDate = [itemDate dateByAddingTimeInterval:fireTimes[i] ];
+        localNotif.timeZone = [NSTimeZone defaultTimeZone];
+        
+        int pushIndex = arc4random()%pushNumber;
+        localNotif.alertBody = push_string[pushIndex];
+        localNotif.alertAction = NSLocalizedString(@"see", nil);
+        
+        localNotif.soundName = UILocalNotificationDefaultSoundName;
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+        
+        [localNotif release];
+    }
+}
+
+
+
 
 - (void) dealloc
 {

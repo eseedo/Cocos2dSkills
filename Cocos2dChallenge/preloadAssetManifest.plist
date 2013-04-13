@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SoundFX</key>
+	<array>
+		<string>menuenter.wav</string>
+		<string>menuselect.wav</string>
+		<string>newtitle.wav</string>
+		<string>right.wav</string>
+	</array>
+	<key>Images</key>
+	<array>
+		<string>0star-hd.png</string>
+		<string>1star-hd.png</string>
+		<string>2stars-hd.png</string>
+		<string>3stars-hd.png</string>
+		<string>button_share_ipad.png</string>
+		<string>button_retry_ipad.png</string>
+		<string>rollbg-ipad.png</string>
+		<string>button_continue_ipad.png</string>
+		<string>button_mainmenu_ipad.png</string>
+		<string>bg_gametitle-ipad.png</string>
+		<string>bg_startscene-ipad.png</string>
+		<string>bg_common-ipad.png</string>
+		<string>musicon-ipad.png</string>
+		<string>musicoff-ipad.png</string>
+		<string>button_back-ipad.png</string>
+		<string>button_start-ipad.png</string>
+		<string>button_help-ipad.png</string>
+		<string>button_aboutus-ipad.png</string>
+		<string>button_locked-ipad.png</string>
+		<string>button_newbie-ipad.png</string>
+		<string>button_monster-ipad.png</string>
+		<string>button_master-ipad.png</string>
+		<string>button_hacker-ipad.png</string>
+		<string>button_coder-ipad.png</string>
+		<string>button_pause-ipad.png</string>
+		<string>quizframe-ipad.png</string>
+		<string>sadface-ipad.png</string>
+		<string>smilingface-ipad.png</string>
+		<string>thinkingface-ipad.png</string>
+		<string>answerSelectedframe-ipad.png</string>
+		<string>answerInitialframe-ipad.png</string>
+		<string>answercorrect-ipad.png</string>
+		<string>answerwrong-ipad.png</string>
+		<string>answer1_index-ipad.png</string>
+		<string>answer2_index-ipad.png</string>
+		<string>answer3_index-ipad.png</string>
+	</array>
+	<key>SpriteSheets</key>
+	<array/>
+	<key>Assets</key>
+	<array/>
+	<key>Music</key>
+	<array>
+		<string>about.mp3</string>
+		<string>button.mp3</string>
+		<string>challenge.mp3</string>
+		<string>levelfail.mp3</string>
+		<string>levelpass.mp3</string>
+	</array>
+</dict>
+</plist>
