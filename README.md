@@ -1,4 +1,4 @@
-Cocos2dChallenge
+Cocos2d Skills Test
 ================
 
-a little cocos2d-iphone game to test your skill of cocos2d-iphone.
+A little cocos2d-iphone based game to test your skill of cocos2d-iphone.
